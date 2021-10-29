@@ -6,5 +6,5 @@
 Thank you for your visiting.
 
 
-#### My name is Tan and I'm realy into Web Programing. This is one of the projects that I made using Gatsbyjs, just to learn about React and improving my front end skill. You can contact me through my email trinhminhtan.27@gmail.com for further cooperation. 
+#### My name is Tan Minh and I'm realy into Web Programing. This is one of the projects that I made using Gatsbyjs, just to learn about React and improving my front end skill. You can contact me through my email trinhminhtan.27@gmail.com for further cooperation. 
 #### Ho Chi Minh City, Vietnam. 

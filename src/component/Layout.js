@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 
 // style css
-import "../styles/global.css";
+import "../assets/styles/global.css";
 
 const Layout = ({ children }) => {
   return (

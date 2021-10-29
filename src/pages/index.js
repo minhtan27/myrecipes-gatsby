@@ -1,9 +1,6 @@
 import React from "react";
 import Layout from "../component/Layout";
 
-// stylecss
-import "../styles/global.css";
-
 const Index = () => {
   return (
     <Layout>

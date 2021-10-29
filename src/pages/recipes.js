@@ -1,17 +1,14 @@
 import React from "react";
 import Layout from "../component/Layout";
 
-// stylecss
-import "../styles/global.css";
-
-const Index = () => {
+const Recipes = () => {
   return (
     <Layout>
       <main>
-        <h1>this is the index page</h1>
+        <h1>this is the recipes page</h1>
       </main>
     </Layout>
   );
 };
 
-export default Index;
+export default Recipes;

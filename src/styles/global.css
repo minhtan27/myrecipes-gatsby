@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+/* ========== variable ========*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 450px;
+  --clr-orange-1: hsl(12, 83%, 98%);
+  --clr-orange-2: hsl(14, 91%, 95%);
+  --clr-orange-3: hsl(12, 89%, 89%);
+  --clr-orange-4: hsl(13, 87%, 82%);
+  --clr-orange-5: hsl(13, 88%, 68%);
+  --clr-orange-6: hsl(13, 88%, 55%);
+  --clr-orange-7: hsl(13, 74%, 49%);
+  --clr-orange-8: hsl(13, 74%, 33%);
+  --clr-orange-9: hsl(13, 73%, 25%);
+  --clr-orange-10: hsl(13, 73%, 16%);
+}
+
+/* ========== Global Setting ========*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+p {
+  font-weight: 400;
+  color: var(--clr-grey-1);
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/* ========== Section Setting ========*/
+/* navigation */
+.nav {
+  height: 80px;
+  width: 100vw;
+  border-bottom: var(--clr-orange-3) solid 4px;
+}
+
+.nav-center {
+  margin: auto;
+  height: 80px;
+  width: 95%;
+  max-width: 1700px;
+  display: block;
+  z-index: 1;
+
+  /* overflow: hidden; */
+}
+
+.nav-logo {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  width: 100%;
+  display: block;
+}
+
+.hide-nav-links {
+  z-index: -99;
+}
+
+.nav-links li {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--clr-grey-1);
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+
+.nav-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide-nav-contact {
+  z-index: -99;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-center {
+    margin: auto;
+    height: 100%;
+    width: 95%;
+    max-width: 1700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    height: auto;
+    width: auto;
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+    z-index: -99;
+  }
+
+  .nav-links {
+    width: 70%;
+    padding-left: 80px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav-links li {
+    height: auto;
+    width: auto;
+    display: inline;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    margin-right: 50px;
+  }
+}
+/* footer */
+.footer {
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-orange-3);
+  color: var(--clr-grey-1);
+}

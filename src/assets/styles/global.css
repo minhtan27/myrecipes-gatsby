@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:ital,wght@0,300;0,500;1,400&display=swap");
 
 /* ========== variable ========*/
 
@@ -17,7 +17,7 @@
   --clr-primary-9: hsl(205, 90%, 88%);
   --clr-primary-10: hsl(205, 100%, 96%);
   /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-1: hsl(233, 57%, 15%);
   --clr-grey-2: hsl(211, 39%, 23%);
   --clr-grey-3: hsl(209, 34%, 30%);
   --clr-grey-4: hsl(209, 28%, 39%);
@@ -34,12 +34,12 @@
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --transition-slow: all 0.3s linear;
+  --transition-slow: all 0.2s linear;
   --transition-fast: all 0.1s linear;
-  --spacing: 0.1rem;
+  --spacing: 0.5rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --dark-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
   --max-width: 1170px;
   --fixed-width: 450px;
   --clr-orange-1: hsl(12, 83%, 98%);
@@ -52,6 +52,8 @@
   --clr-orange-8: hsl(13, 74%, 33%);
   --clr-orange-9: hsl(13, 73%, 25%);
   --clr-orange-10: hsl(13, 73%, 16%);
+  --font-primary: "Merriweather", serif;
+  --font-secondary: "Poppins", sans-serif;
 }
 
 /* ========== Global Setting ========*/
@@ -64,7 +66,7 @@
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: var(--font-secondary);
   background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -80,28 +82,33 @@ h1,
 h2,
 h3,
 h4 {
-  letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
+  font-family: var(--font-primary);
 }
 h1 {
   font-size: 3rem;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 h2 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 h3 {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 h4 {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 p {
-  font-weight: 400;
+  font-family: var(--font-secondary);
+  font-weight: 300;
   color: var(--clr-grey-1);
 }
 
@@ -125,30 +132,29 @@ p {
   h2,
   h3,
   h4 {
-    line-height: 1;
+    line-height: 1.5;
   }
 }
 /* ========== Section Setting ========*/
+/* page */
+.page {
+  width: 95vw;
+  margin: auto;
+}
+
 /* navigation */
+
 .nav {
+  margin: 0px auto 50px auto;
   height: 80px;
-  width: 100vw;
-  margin-bottom: 50px;
-  transition: var(--transition-slow);
+  width: 95vw;
   overflow: hidden;
+  border-bottom: var(--clr-red-light) solid 2px;
+  transition: height 0.3s;
 }
 
 .nav-display {
   height: 400px;
-}
-
-.nav-center {
-  margin: auto;
-  height: 80px;
-  width: 95%;
-  max-width: 1700px;
-  border-bottom: var(--clr-red-light) solid 4px;
-  display: block;
 }
 
 .nav-logo {
@@ -161,22 +167,26 @@ p {
 }
 
 .nav-logo img {
-  height: 60px;
+  height: 55px;
   object-fit: contain;
 }
 
 .nav-toggle {
   cursor: pointer;
+  position: relative;
 }
 
 .toggle-icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  transform: translateY(-50%);
   font-size: 2rem;
   color: var(--clr-red-light);
-  transition: var(--transition-slow);
 }
 
-.toggle-icon-clicked {
-  transform: rotate(180deg);
+.toggle-icon-hide {
+  display: none;
 }
 
 .nav-links {
@@ -194,20 +204,21 @@ p {
 
 .nav-link {
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--clr-grey-1);
   text-transform: capitalize;
   line-height: 1.25;
-  transition: var(--transition-fast);
 }
 
 .nav-link-active {
   color: var(--clr-red-light);
-  border-bottom: var(--clr-red-light) solid 4px;
+  border-bottom: var(--clr-red-light) solid 2px;
 }
 
 .nav-contact {
-  height: 60px;
+  margin: auto;
+  height: 40px;
+  width: 120px;
   background-color: var(--clr-red-light);
   border-radius: 10px;
   display: flex;
@@ -219,18 +230,11 @@ p {
 .nav-contact span {
   color: var(--clr-white);
   font-size: 1.2rem;
-  font-weight: 700;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .nav {
     height: 80px;
-  }
-  .nav-center {
-    margin: auto;
-    height: 100%;
-    width: 95%;
-    max-width: 1700px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -265,8 +269,9 @@ p {
   }
 
   .nav-contact {
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 120px;
+    margin-right: 0px;
   }
 }
 /* footer */
@@ -274,7 +279,6 @@ p {
   margin: 50px auto 0px auto;
   height: 80px;
   width: 95vw;
-  max-width: 1700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,4 +287,204 @@ p {
 
 .footer a {
   color: var(--clr-white);
+}
+
+/* 404 section */
+.error-section {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error-section h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.error-section h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.error-section p {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+/* ===== home page ====== */
+.home-hero {
+  height: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.h-h-img {
+  height: 500px;
+  width: 100%;
+}
+
+.h-h-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 40px 100px;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  color: var(--clr-grey-1);
+}
+
+.h-h-title p {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.h-h-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 10px;
+}
+
+input {
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--clr-white);
+  transition: var(--transition-slow);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--clr-grey-1);
+  color: var(--clr-white);
+}
+
+/* ===== recipes page ====== */
+.recipes-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.r-c-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 50px;
+  row-gap: 50px;
+}
+.r-c-l-i-image {
+  height: 400px;
+}
+
+@media screen and (min-width: 900px) {
+  .recipes-center {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    column-gap: 50px;
+  }
+}
+
+/* ===== about page ====== */
+.about-intro {
+  margin: 0px auto 50px auto;
+  width: 80vw;
+  text-align: center;
+}
+
+.about-intro p {
+  color: var(--clr-red-light);
+  font-size: 1.2rem;
+}
+
+.a-i-icon {
+  margin: 50px auto 0px auto;
+  font-size: 2rem;
+  color: var(--clr-red-light);
+}
+
+.about-content {
+  margin: 0px auto 50px auto;
+  width: 85vw;
+  display: grid;
+  grid-template-rows: 500px 500px;
+  row-gap: 20px;
+}
+
+.a-c-1,
+.a-c-2 {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--dark-shadow);
+}
+
+.a-c-1-img {
+  height: 100%;
+}
+
+.a-c-1-text {
+  position: absolute;
+  width: 85%;
+  bottom: 20px;
+  left: 20px;
+  color: var(--clr-white);
+}
+
+.a-c-2 {
+  display: grid;
+  grid-template-rows: 60% 1fr;
+}
+
+.a-c-2-text {
+  margin: 20px 40px auto 20px;
+}
+
+.about-readmore {
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  background-color: var(--clr-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.a-r-link {
+  color: var(--clr-white);
+}
+
+@media screen and (min-width: 900px) {
+  .about-content {
+    margin: 0px auto 50px auto;
+    width: 95vw;
+    display: grid;
+    grid-template-rows: 600px;
+    grid-template-columns: 1fr 400px;
+    column-gap: 100px;
+  }
+
+  .a-c-2 {
+    display: grid;
+    grid-template-rows: 40% 1fr;
+  }
 }

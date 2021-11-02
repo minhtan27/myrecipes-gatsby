@@ -7,20 +7,23 @@ import { graphql } from "gatsby";
 
 export const data = graphql`
   {
-    allFile(filter: { name: { eq: "about" } }) {
+    allContentfulMrRecipesContent(filter: { featured: { eq: false } }) {
       nodes {
-        childImageSharp {
+        id
+        image {
           gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
         }
-        name
+        title
       }
     }
   }
 `;
 
 const About = ({ data }) => {
-  const aboutImg = getImage(data.allFile.nodes[0].childImageSharp);
-
+  const data1 = data.allContentfulMrRecipesContent.nodes[0];
+  const data2 = data.allContentfulMrRecipesContent.nodes[1];
+  const aboutImg1 = getImage(data1.image);
+  const aboutImg2 = getImage(data2.image);
   return (
     <Layout>
       <main className="page">
@@ -45,8 +48,8 @@ const About = ({ data }) => {
         <section className="about-content">
           <div className="a-c-1">
             <GatsbyImage
-              image={aboutImg}
-              alt={data.allFile.nodes[0].name}
+              image={aboutImg1}
+              alt={data1.title}
               className="a-c-1-img"
             ></GatsbyImage>
             <div className="a-c-1-text">
@@ -58,8 +61,8 @@ const About = ({ data }) => {
           </div>
           <div className="a-c-2">
             <GatsbyImage
-              image={aboutImg}
-              alt={data.allFile.nodes[0].name}
+              image={aboutImg2}
+              alt={data2.title}
               className="a-c-2-img"
             ></GatsbyImage>
             <div className="a-c-2-text">

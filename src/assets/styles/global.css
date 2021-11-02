@@ -212,7 +212,6 @@ p {
 
 .nav-link-active {
   color: var(--clr-red-light);
-  border-bottom: var(--clr-red-light) solid 2px;
 }
 
 .nav-contact {
@@ -342,26 +341,29 @@ p {
 }
 
 .h-h-form {
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 input,
-button {
+button,
+label {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  padding: 10px;
+  margin-bottom: 10px;
 }
 
 input {
   height: 50px;
-  width: 300px;
+  width: 250px;
   border: none;
   border-radius: 5px;
+  border: var(--clr-grey-1) solid 1px;
   margin-right: 10px;
+  padding: 10px;
 }
 
 button {
@@ -372,6 +374,7 @@ button {
   background-color: var(--clr-white);
   transition: var(--transition-slow);
   cursor: pointer;
+  box-shadow: var(--light-shadow);
 }
 
 button:hover {
@@ -395,11 +398,59 @@ button:hover {
   height: 400px;
 }
 
+.r-c-t-text {
+  text-transform: capitalize;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+  column-gap: 5px;
+  row-gap: 5px;
+  margin-bottom: 50px;
+}
+
+.r-c-t-text p {
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--clr-orange-2);
+  transition: var(--transition-slow);
+  cursor: pointer;
+}
+
+.r-c-t-text p:hover {
+  color: var(--clr-red-light);
+}
+
 @media screen and (min-width: 900px) {
   .recipes-center {
     display: grid;
     grid-template-columns: 250px 1fr;
     column-gap: 50px;
+  }
+
+  .r-c-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+    column-gap: 50px;
+    row-gap: 50px;
+  }
+
+  .r-c-t-text {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .r-c-t-text p {
+    text-align: left;
+    padding: 5px;
+    border-radius: 0px;
+    background-color: transparent;
+
+    width: 0%;
+  }
+
+  .r-c-t-text p:hover {
+    color: var(--clr-red-light);
+    border-bottom: var(--clr-red-light) solid 1px;
+    width: 100%;
   }
 }
 

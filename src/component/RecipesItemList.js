@@ -1,13 +1,13 @@
 import React from "react";
 import RecipeItem from "./RecipeItem";
 
-const RecipesItemList = ({ recipesList = [] }) => {
+const RecipesItemList = ({ recipesItemList = [] }) => {
   return (
-    <section className="r-c-list">
-      {recipesList.map((recipe) => {
+    <div className="r-c-list">
+      {recipesItemList.map((recipe) => {
         return <RecipeItem key={recipe.id} recipe={recipe} />;
       })}
-    </section>
+    </div>
   );
 };
 

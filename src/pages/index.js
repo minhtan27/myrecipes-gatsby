@@ -18,7 +18,7 @@ const Index = () => {
           </div>
           <div className="h-h-title">
             <h1>My Recipes</h1>
-            <p>A simple way to bring Vietnamese cuisine into your home</p>
+            <p>Receive Vietnamese cuisine recipe everyday to your inbox.</p>
             <form
               className="h-h-form"
               onSubmit={(e) => {

@@ -9,12 +9,6 @@ module.exports = {
     description: "A recipes website for people loving cooking",
     author: "@tanminh",
     person: { name: "tan", age: 24 },
-    simpleData: ["item 1", "item 2"],
-    complexData: [
-      { name: "tan", age: 24 },
-      { name: "anna", age: 22 },
-      { name: "vysa", age: 21 },
-    ],
   },
   plugins: [
     `gatsby-plugin-image`,

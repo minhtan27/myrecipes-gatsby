@@ -364,6 +364,7 @@ input {
   border: var(--clr-grey-1) solid 1px;
   margin-right: 10px;
   padding: 10px;
+  text-transform: capitalize;
 }
 
 button {
@@ -443,14 +444,10 @@ button:hover {
     padding: 5px;
     border-radius: 0px;
     background-color: transparent;
-
-    width: 0%;
   }
 
   .r-c-t-text p:hover {
     color: var(--clr-red-light);
-    border-bottom: var(--clr-red-light) solid 1px;
-    width: 100%;
   }
 }
 

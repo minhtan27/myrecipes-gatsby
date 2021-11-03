@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../component/Layout";
-import RecipesTagList from "../component/RecipesTagList";
-import RecipesItemList from "../component/RecipesItemList";
+import RecipesTags from "../component/RecipesTags";
+import RecipesItems from "../component/RecipesItems";
 import { graphql } from "gatsby";
 import { useState } from "react";
 
@@ -34,32 +34,36 @@ export const queryAllRecipesContent = graphql`
   }
 `;
 
-const Recipes = ({
-  data: {
+const Recipes = ({ data }) => {
+  const {
     allContentfulMrRecipesContent: { nodes },
-  },
-}) => {
+  } = data;
+
   const [filterItem, setFilterItem] = useState("");
 
-  let recipesTagList = tagsExtract(nodes);
-  let recipesItemList = nodes;
+  let recipesTags = tagsObj(nodes);
+  let recipesItems = nodes;
 
-  function tagsExtract(array) {
-    let newArr = [];
-    array.forEach((item) => {
+  function tagsObj(nodes, regex = new RegExp("", "i")) {
+    let newNodes = {};
+    nodes.forEach((item) => {
       item.childContentfulMrRecipesContentContentJsonNode.tags.forEach(
-        (element) => {
-          if (newArr.indexOf(element) === -1) newArr.push(element);
+        (tag) => {
+          if (regex.test(tag)) {
+            newNodes[tag] = (tagsObj[tag] || 0) + 1;
+          }
         }
       );
     });
-    return newArr.sort();
+    return newNodes;
   }
 
   if (filterItem) {
     let regex = new RegExp(filterItem, "i");
-    recipesTagList = recipesTagList.filter((tag) => regex.test(tag));
-    recipesItemList = recipesItemList.filter((recipe) => {
+
+    recipesTags = tagsObj(nodes, regex);
+
+    recipesItems = recipesItems.filter((recipe) => {
       let flag = false;
       let recipeTags =
         recipe.childContentfulMrRecipesContentContentJsonNode.tags;
@@ -77,12 +81,12 @@ const Recipes = ({
           <h2>Recipes Catalog</h2>
         </section>
         <section className="recipes-center">
-          <RecipesTagList
-            recipesTagList={recipesTagList}
+          <RecipesTags
+            recipesTags={recipesTags}
             setFilterItem={setFilterItem}
             filterItem={filterItem}
           />
-          <RecipesItemList recipesItemList={recipesItemList} />
+          <RecipesItems recipesItems={recipesItems} />
         </section>
       </main>
     </Layout>

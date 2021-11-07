@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../component/Layout";
-import RecipesTags from "../component/RecipesTags";
-import RecipesItems from "../component/RecipesItems";
+import Layout from "../../component/Layout";
+import RecipesTags from "../../component/RecipesTags";
+import RecipesItems from "../../component/RecipesItems";
 import { graphql } from "gatsby";
 import { useState } from "react";
 
@@ -50,7 +50,7 @@ const Recipes = ({ data }) => {
       item.childContentfulMrRecipesContentContentJsonNode.tags.forEach(
         (tag) => {
           if (regex.test(tag)) {
-            newNodes[tag] = (tagsObj[tag] || 0) + 1;
+            newNodes[tag] = (newNodes[tag] || 0) + 1;
           }
         }
       );

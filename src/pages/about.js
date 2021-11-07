@@ -76,11 +76,11 @@ const About = ({ data }) => {
           </div>
         </section>
         <section className="about-readmore">
-          <p>
+          <span>
             <Link to="/blogs" className="a-r-link">
               Read more on the blog
             </Link>
-          </p>
+          </span>
         </section>
       </main>
     </Layout>

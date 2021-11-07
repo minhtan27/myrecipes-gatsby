@@ -33,11 +33,7 @@ const Nav = () => {
           const { id, name, url } = item;
           return (
             <li key={id}>
-              <Link
-                to={url}
-                className="nav-link"
-                activeClassName="nav-link-active"
-              >
+              <Link to={url} className="link" activeClassName="nav-link-active">
                 {name}
               </Link>
             </li>

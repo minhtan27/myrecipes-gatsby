@@ -3,10 +3,10 @@ import React from "react";
 const Footer = () => {
   return (
     <section className="footer">
-      <p>
+      <span>
         &copy; {new Date().getFullYear()} <span>MyRecipes</span> made with{" "}
         <a href="gatsbyjs.com">GatsbyJS</a>
-      </p>
+      </span>
     </section>
   );
 };

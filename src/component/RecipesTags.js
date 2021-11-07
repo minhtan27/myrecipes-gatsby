@@ -18,13 +18,15 @@ const RecipesTags = ({ recipesTags = [], setFilterItem, filterItem }) => {
         />
       </form>
       <div className="r-c-t-text">
-        {Object.keys(recipesTags).map((tag, index) => {
-          return (
-            <p key={index} onClick={(e) => setFilterItem(tag)}>
-              {tag} ({recipesTags[tag]})
-            </p>
-          );
-        })}
+        {Object.keys(recipesTags)
+          .sort()
+          .map((tag, index) => {
+            return (
+              <p key={index} onClick={(e) => setFilterItem(tag)}>
+                {tag} ({recipesTags[tag]})
+              </p>
+            );
+          })}
       </div>
     </div>
   );

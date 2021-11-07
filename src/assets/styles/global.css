@@ -104,12 +104,20 @@ h3 {
 h4 {
   font-size: 0.875rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 p {
   font-family: var(--font-secondary);
   font-weight: 300;
   color: var(--clr-grey-1);
+  margin-bottom: 5px;
+}
+
+span {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  color: var(--clr-grey-1);
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: 800px) {
@@ -202,7 +210,7 @@ p {
   justify-content: center;
 }
 
-.nav-link {
+.link {
   font-size: 1.1rem;
   font-weight: 300;
   color: var(--clr-grey-1);
@@ -262,7 +270,7 @@ p {
     width: auto;
   }
 
-  .nav-link {
+  .link {
     font-size: 1.25rem;
     margin-right: 50px;
   }
@@ -397,6 +405,7 @@ button:hover {
 }
 .r-c-l-i-image {
   height: 400px;
+  margin-bottom: 10px;
 }
 
 .r-c-t-text {
@@ -449,6 +458,103 @@ button:hover {
   .r-c-t-text p:hover {
     color: var(--clr-red-light);
   }
+}
+
+/* ===== individual recipe page ====== */
+.recipeitem-hero {
+  margin-bottom: 20px;
+}
+
+.recipeitem-hero h3 {
+  color: var(--clr-red-light);
+}
+
+.ri-h-img {
+  margin-bottom: 20px;
+  height: 500px;
+}
+
+.ri-h-t-info {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  align-items: center;
+  column-gap: 10px;
+}
+
+.ri-h-t-i-icon {
+  height: 80px;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: var(--clr-grey-1) solid 1px;
+  color: var(--clr-grey-1);
+}
+
+.ri-h-t-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ri-h-t-tags p {
+  margin: 0px 0px 0px 10px;
+  text-align: center;
+  padding: 0px 10px;
+  color: var(--clr-white);
+  background-color: var(--clr-red-light);
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+.ri-d {
+  margin-bottom: 20px;
+  padding: 20px 10px;
+  border: var(--clr-grey-1) solid 1px;
+}
+
+@media screen and (min-width: 900px) {
+  .recipeitem-hero {
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    column-gap: 20px;
+  }
+
+  .ri-h-t-info {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .recipeitem-detail {
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    grid-template-areas:
+      "left righta"
+      "left rightb";
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+
+  .instructions {
+    grid-area: left;
+  }
+
+  .ingredients {
+    grid-area: righta;
+  }
+
+  .tools {
+    grid-area: rightb;
+  }
+}
+
+.ri-d h3 {
+  padding: 5px 20px;
+  background-color: var(--clr-red-light);
+  color: var(--clr-white);
 }
 
 /* ===== about page ====== */

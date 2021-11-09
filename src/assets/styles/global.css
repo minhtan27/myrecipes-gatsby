@@ -556,8 +556,53 @@ button:hover {
   background-color: var(--clr-red-light);
   color: var(--clr-white);
 }
+/* ===== blog page ====== */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.blog-hero {
+  margin-bottom: 50px;
+  height: 200px;
+  position: relative;
+}
+
+.b-h-img {
+  height: 200px;
+}
+
+.b-h-text {
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  padding: 20px;
+  color: var(--clr-grey-1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.b-c-item {
+  height: 600px;
+  display: grid;
+  grid-template-rows: 60% 1fr;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--dark-shadow);
+}
+
+.b-c-i-img {
+  height: 100%;
+  width: 100%;
+}
+
+.b-c-i-text {
+  margin: 20px 40px auto 20px;
+}
 
 /* ===== about page ====== */
+
 .about-intro {
   margin: 0px auto 50px auto;
   width: 80vw;

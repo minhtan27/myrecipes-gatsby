@@ -21,18 +21,10 @@ const Index = () => {
             <p>Receive Vietnamese cuisine recipe everyday to your inbox.</p>
             <form
               className="h-h-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
+              action="https://formspree.io/f/mwkadjge"
+              method="POST"
             >
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value=""
-                onChange={() => {}}
-                placeholder="Email"
-              />
+              <input type="email" name="email" id="email" placeholder="Email" />
               <button type="submit">Submit</button>
             </form>
           </div>

@@ -357,11 +357,16 @@ span {
 
 input,
 button,
-label {
+label,
+textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   margin-bottom: 10px;
+}
+textarea {
+  padding: 10px;
+  border-radius: 5px;
 }
 
 input {
@@ -658,7 +663,7 @@ button:hover {
 }
 
 .about-readmore {
-  margin: auto;
+  margin: auto auto 50px auto;
   width: 200px;
   height: 50px;
   background-color: var(--clr-red-light);
@@ -670,6 +675,32 @@ button:hover {
 
 .a-r-link {
   color: var(--clr-white);
+}
+
+.about-contact {
+  text-align: center;
+}
+
+.a-c-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+}
+
+.a-c-f-row {
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.a-c-f-row input {
+  width: 100%;
+}
+
+.a-c-form button {
+  width: 200px;
 }
 
 @media screen and (min-width: 900px) {

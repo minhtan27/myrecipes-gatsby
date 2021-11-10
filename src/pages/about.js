@@ -82,6 +82,33 @@ const About = ({ data }) => {
             </Link>
           </span>
         </section>
+        <section className="about-contact">
+          <h3>Contact us for more</h3>
+          <form
+            action="https://formspree.io/f/mwkadjge"
+            className="a-c-form"
+            method="POST"
+          >
+            <div className="a-c-f-row">
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" />
+            </div>
+            <div className="a-c-f-row">
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <div className="a-c-f-row">
+              <label htmlFor="message">Message:</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </section>
       </main>
     </Layout>
   );

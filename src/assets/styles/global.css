@@ -120,6 +120,47 @@ span {
   text-transform: capitalize;
 }
 
+input,
+button,
+label,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  margin-bottom: 10px;
+}
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input {
+  height: 50px;
+  width: 250px;
+  border: none;
+  border-radius: 5px;
+  border: var(--clr-grey-1) solid 1px;
+  margin-right: 10px;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--clr-white);
+  transition: var(--transition-slow);
+  cursor: pointer;
+  box-shadow: var(--light-shadow);
+}
+
+button:hover {
+  background-color: var(--clr-grey-1);
+  color: var(--clr-white);
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -237,6 +278,7 @@ span {
 .nav-contact span {
   color: var(--clr-white);
   font-size: 1.2rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 900px) {
@@ -325,6 +367,7 @@ span {
   height: 500px;
   width: 100%;
   position: relative;
+  margin-bottom: 50px;
 }
 
 .h-h-img {
@@ -355,44 +398,55 @@ span {
   justify-content: center;
 }
 
-input,
-button,
-label,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  margin-bottom: 10px;
-}
-textarea {
-  padding: 10px;
-  border-radius: 5px;
+.about-content {
+  margin: 0px auto 50px auto;
+  width: 85vw;
+  display: grid;
+  grid-template-rows: 500px 500px;
+  row-gap: 20px;
 }
 
-input {
+.a-c-1,
+.a-c-2 {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--dark-shadow);
+}
+
+.a-c-1-img {
+  height: 100%;
+}
+
+.a-c-1-text {
+  position: absolute;
+  width: 85%;
+  bottom: 20px;
+  left: 20px;
+  color: var(--clr-white);
+}
+
+.a-c-2 {
+  display: grid;
+  grid-template-rows: 60% 1fr;
+}
+
+.a-c-2-text {
+  margin: 20px 40px auto 20px;
+}
+
+.about-readmore {
+  margin: auto auto 50px auto;
+  width: 200px;
   height: 50px;
-  width: 250px;
-  border: none;
+  background-color: var(--clr-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
-  border: var(--clr-grey-1) solid 1px;
-  margin-right: 10px;
-  padding: 10px;
-  text-transform: capitalize;
 }
 
-button {
-  height: 50px;
-  width: 100px;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--clr-white);
-  transition: var(--transition-slow);
-  cursor: pointer;
-  box-shadow: var(--light-shadow);
-}
-
-button:hover {
-  background-color: var(--clr-grey-1);
+.a-r-link {
   color: var(--clr-white);
 }
 
@@ -606,6 +660,41 @@ button:hover {
   margin: 20px 40px auto 20px;
 }
 
+/* ===== blog post ====== */
+.blogpost-hero {
+  position: relative;
+}
+.bp-h-img {
+  height: 500px;
+}
+
+.bp-h-text {
+  text-align: center;
+  width: 90vw;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 50px 0px;
+  outline: rgba(255, 255, 255, 0.8) solid 1px;
+  outline-offset: 10px;
+}
+.blogpost-center {
+  width: 80vw;
+  margin: 50px auto 50px auto;
+}
+
+@media screen and (min-width: 900px) {
+  .blogpost-center {
+    width: 50vw;
+  }
+  .bp-h-text {
+    padding: 50px 150px;
+  }
+}
 /* ===== about page ====== */
 
 .about-intro {
@@ -623,58 +712,6 @@ button:hover {
   margin: 50px auto 0px auto;
   font-size: 2rem;
   color: var(--clr-red-light);
-}
-
-.about-content {
-  margin: 0px auto 50px auto;
-  width: 85vw;
-  display: grid;
-  grid-template-rows: 500px 500px;
-  row-gap: 20px;
-}
-
-.a-c-1,
-.a-c-2 {
-  position: relative;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: var(--dark-shadow);
-}
-
-.a-c-1-img {
-  height: 100%;
-}
-
-.a-c-1-text {
-  position: absolute;
-  width: 85%;
-  bottom: 20px;
-  left: 20px;
-  color: var(--clr-white);
-}
-
-.a-c-2 {
-  display: grid;
-  grid-template-rows: 60% 1fr;
-}
-
-.a-c-2-text {
-  margin: 20px 40px auto 20px;
-}
-
-.about-readmore {
-  margin: auto auto 50px auto;
-  width: 200px;
-  height: 50px;
-  background-color: var(--clr-red-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-}
-
-.a-r-link {
-  color: var(--clr-white);
 }
 
 .about-contact {

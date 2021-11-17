@@ -41,7 +41,9 @@ const Nav = () => {
         })}
       </ul>
       <div className="nav-contact">
-        <span>Contact</span>
+        <Link to="/about">
+          <span>Contact</span>
+        </Link>
       </div>
     </nav>
   );
